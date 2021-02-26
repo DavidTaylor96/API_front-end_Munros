@@ -2,6 +2,7 @@
   <div>
     <h1>Chose Your Munro</h1>
     <div>
+      <filter-munro-form :munros="munros"></filter-munro-form>
       <munro-list :munros="munros"></munro-list>
       <munro-detail :munro="selectedMunro"></munro-detail>
     </div>
@@ -13,6 +14,7 @@
 </template>
 
 <script>
+import FilterMunroForm from './components/FilterMunroForm.vue'
 import MunroDetail from './components/MunroDetail.vue';
 import MunroList from './components/MunroList.vue';
 import BaggedMunro from './components/FavouriteMunro.vue'
@@ -32,6 +34,7 @@ export default {
     'munro-list': MunroList,
     'munro-detail': MunroDetail,
     'bagged-munro': BaggedMunro,
+    'filter-munro-form': FilterMunroForm
   },
   mounted() {
     this.getNewListItems();
