@@ -54,18 +54,15 @@ export default {
     getNewListItems() {
       fetch("https://munroapi.herokuapp.com/munros")
        .then(res => res.json())
-       .then(data => this.munros = data)
+       .then(data => {
+         this.munros = data
+         this.mixData = data
+      })
     },
     addToFavourite: function () {
       if(!this.selectedMunro) return;
       this.baggedMunro.push(this.selectedMunro)
     },
-    fetchMixData: function(data){
-      const url = `https://munroapi.herokuapp.com/munros/${data.name}/${data.height}`;
-      fetch(url)
-      .then(res => res.json())
-      .then(result => this.mixData = results)
-    }
   }
 }
 </script>

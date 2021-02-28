@@ -1,7 +1,6 @@
 <template>
   <div class="component-wrapper">
     <GChart
-    v-if="chartData"
     type="LineChart"
     :data="chartData"
     :options="chartOptions"
@@ -17,12 +16,19 @@ export default {
   components:{ GChart },
 data () {
     return {
+      // chartData:[
+      // ['name', 'height'],
+      // ['Carin Groms', 1244],
+      // ['Ben Nevs', 1305],
+      // ['Ben Macdui', 1309],
+      // ],
       chartOptions:{
         chart:{
-          titel: 'Munro Heights',
+          title: 'Munro Heights',
           subtitle: 'Munro, Height, In Feet'
         }
-      }
+      },
+      mixData: [],
     }
    }, 
   props:['mixData'],
@@ -30,10 +36,10 @@ data () {
   computed: {
     chartData: function () {
       if(this.mixData){
-        const chartData = [['height'], ...this.mixData.map(mix => ([mix.height]))]
-        return chartData
+      const chartData = [['name','height'], ...this.mixData.map(mix => ([mix.name, mix.height]))]
+      return chartData
       }
-        return null 
+      return null
     }
   }
 }
