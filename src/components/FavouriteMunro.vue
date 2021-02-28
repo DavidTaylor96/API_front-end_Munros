@@ -37,7 +37,7 @@ export default {
 #delete{
   padding: 10px;
   border: none;
-  background-color: rgb(20, 53, 66);
+  background-color: rgb(31, 101, 129);
   color: white;
   border-radius: 5px;
   margin-top: 5px;

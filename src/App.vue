@@ -70,7 +70,7 @@ body{
   margin: 0;
   text-align: center;
   font-weight: 100;
-  background-color: rgb(20, 53, 66);
+  background-color: rgb(31, 101, 129);
   color: white;
   padding: 20px;
 }
@@ -78,7 +78,7 @@ body{
 button{
   padding: 10px;
   border: none;
-  background-color: rgb(20, 53, 66);
+  background-color: rgb(31, 101, 129);
   color: white;
   border-radius: 5px;
   margin-left: 45%;
