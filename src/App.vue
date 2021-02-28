@@ -1,12 +1,14 @@
 <template>
   <div>
-    <h1>Chose Your Munro</h1>
-    <div>
+    <h1 id="heading">Chose Your Munro</h1>
+    <div id="forms">
       <filter-munro-form :munros="munros"></filter-munro-form>
       <munro-list :munros="munros"></munro-list>
+    </div>
+    <div id="details">
       <munro-detail :munro="selectedMunro"></munro-detail>
     </div>
-    
+
     <button v-if="!baggedMunro.includes(selectedMunro)" v-on:click="addToFavourite">Bag Munro</button>
     <bagged-munro :baggedMunro="baggedMunro"></bagged-munro>
 
@@ -58,5 +60,43 @@ export default {
 </script>
 
 <style>
+body{
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f4;
+}
 
+#heading{
+  margin: 0;
+  text-align: center;
+  font-weight: 100;
+  background-color: rgb(20, 53, 66);
+  color: white;
+  padding: 20px;
+}
+
+button{
+  padding: 10px;
+  border: none;
+  background-color: rgb(20, 53, 66);
+  color: white;
+  border-radius: 5px;
+  margin-left: 45%;
+  margin-top: 5px;
+}
+
+#forms{
+  margin: 5px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+#details{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  box-shadow:  2px 2px 2px 0px rgb(20, 53, 66);
+  margin: 0 200px;
+}
 </style>

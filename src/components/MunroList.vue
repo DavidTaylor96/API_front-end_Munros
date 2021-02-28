@@ -1,6 +1,6 @@
 <template>
   <div>
-    <select v-on:change="handleSelect" v-model="selectedMunro">
+    <select id="option-bar" v-on:change="handleSelect" v-model="selectedMunro">
      <option v-for="(munro, index) in munros" :value="munro" :key="index">{{munro.name}}</option>
     </select>
   </div>
@@ -27,5 +27,11 @@ export default {
 </script>
 
 <style>
+#option-bar{
+  padding: 7px;
+  border: 1px solid rgb(183, 183, 183);
+  border-radius: 5px;
+  margin: 5px;
+}
 
 </style>
