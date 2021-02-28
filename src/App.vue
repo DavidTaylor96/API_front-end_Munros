@@ -12,6 +12,8 @@
     <button v-if="!baggedMunro.includes(selectedMunro)" v-on:click="addToFavourite">Bag Munro</button>
     <bagged-munro :baggedMunro="baggedMunro"></bagged-munro>
 
+    <munro-line-graph></munro-line-graph>
+
   </div>
 </template>
 
@@ -20,6 +22,7 @@ import FilterMunroForm from './components/FilterMunroForm.vue'
 import MunroDetail from './components/MunroDetail.vue';
 import MunroList from './components/MunroList.vue';
 import BaggedMunro from './components/FavouriteMunro.vue'
+import MunroLineChart from './components/MunroLineChart.vue';
 
 import { eventBus } from './main.js'
 
@@ -36,7 +39,8 @@ export default {
     'munro-list': MunroList,
     'munro-detail': MunroDetail,
     'bagged-munro': BaggedMunro,
-    'filter-munro-form': FilterMunroForm
+    'filter-munro-form': FilterMunroForm,
+    'munro-line-graph': MunroLineChart
   },
   mounted() {
     this.getNewListItems();
