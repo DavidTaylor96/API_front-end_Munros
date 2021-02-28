@@ -1,5 +1,5 @@
 <template>
-  <div class="component-wrapper">
+  <div class="chart-wrapper">
     <GChart
     type="LineChart"
     :data="chartData"
@@ -16,19 +16,14 @@ export default {
   components:{ GChart },
 data () {
     return {
-      // chartData:[
-      // ['name', 'height'],
-      // ['Carin Groms', 1244],
-      // ['Ben Nevs', 1305],
-      // ['Ben Macdui', 1309],
-      // ],
       chartOptions:{
+        width: 800,
+        height: 470,
         chart:{
           title: 'Munro Heights',
           subtitle: 'Munro, Height, In Feet'
         }
       },
-      // munroMixData: [],
     }
    }, 
   props:['mixData'],
@@ -46,5 +41,11 @@ data () {
 </script>
 
 <style>
+.chart-wrapper{
+  float: right;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-right: 10px
+}
 
 </style>

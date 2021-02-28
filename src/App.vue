@@ -36,6 +36,8 @@ export default {
       selectedMunro: null,
       baggedMunro: [],
       mixData: null,
+      normalMarker: [15, 15],
+      largeMarker: [30, 30]
     }
   },
   components:{
@@ -56,10 +58,10 @@ export default {
   methods: {
     getNewListItems() {
       fetch("https://munroapi.herokuapp.com/munros")
-       .then(res => res.json())
-       .then(data => {
-         this.munros = data
-         this.mixData = data
+        .then(res => res.json())
+        .then(data => {
+          this.munros = data
+          this.mixData = data
       })
     },
     addToFavourite: function () {

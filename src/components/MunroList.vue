@@ -1,6 +1,6 @@
 <template>
   <div>
-    <select id="option-bar" v-on:change="handleSelect" v-model="selectedMunro">
+    <select id="option-bar" v-on:change="handleSelect(index)" v-model="selectedMunro">
      <option v-for="(munro, index) in munros" :value="munro" :key="index">{{munro.name}}</option>
     </select>
   </div>
@@ -19,8 +19,8 @@ export default {
     }
   },
   methods: {
-    handleSelect() {
-      eventBus.$emit('munro-selected', this.selectedMunro)
+    handleSelect(index) {
+      eventBus.$emit('munro-selected', this.selectedMunro, index)
     }
   }
 }

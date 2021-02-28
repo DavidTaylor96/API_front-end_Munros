@@ -1,6 +1,6 @@
 <template>
    <div id="mapContainer">
-     <h2> Center is {{currentCenter}}, Zoom id {{currentZoom}} </h2>
+     <!-- <p> Center is {{currentCenter}}, Zoom is {{currentZoom}} </p> -->
      <l-map :zoom="zoom" :center="center" @update:zoom="zoomUpdate" @update:center="centerUpdate">
       <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
       <l-marker
@@ -13,8 +13,7 @@
 
 <script>
 import L from 'leaflet';
-import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
-import func from '../../vue-temp/vue-editor-bridge';
+import { LMap, LTileLayer, LMarker} from 'vue2-leaflet';
 
 export default {
   name: 'munro-map',
@@ -27,10 +26,10 @@ export default {
   },
   data() {
     return {
-      zoom:8,
-      center: L.latLng(47.413220, -1.219482),
-      currentCenter:  L.latLng(47.413220, -1.219482),
-      currnetZoom: 8,
+      zoom:7,
+      center: L.latLng(57.292583, -4.848205),
+      currentCenter:  L.latLng(57.292583, -4.848205),
+      currentZoom: 7,
       url:'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
       attribution:'&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
       marker: L.latLng(47.413220, -1.219482),
@@ -44,7 +43,7 @@ export default {
       this.currentCenter = center
     },
     zoomUpdate: function (zoom){
-      this.currnetZoom = zoom
+      this.currentZoom = zoom
     }
   }
 };
@@ -52,6 +51,8 @@ export default {
 
 <style scoped>
 #mapContainer {
+ margin-top: 10px;
+ margin-left: 10px;
  height: 50vh;
  width: 50vh;
 }
