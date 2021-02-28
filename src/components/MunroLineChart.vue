@@ -28,7 +28,7 @@ data () {
           subtitle: 'Munro, Height, In Feet'
         }
       },
-      mixData: [],
+      // munroMixData: [],
     }
    }, 
   props:['mixData'],

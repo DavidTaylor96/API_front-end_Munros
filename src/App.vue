@@ -13,16 +13,18 @@
     <bagged-munro :baggedMunro="baggedMunro"></bagged-munro>
 
     <munro-line-graph v-if="mixData" :mixData="mixData"></munro-line-graph>
+    <munro-map :munros="munros"></munro-map>
 
   </div>
 </template>
 
 <script>
-import FilterMunroForm from './components/FilterMunroForm.vue'
+import FilterMunroForm from './components/FilterMunroForm.vue';
 import MunroDetail from './components/MunroDetail.vue';
 import MunroList from './components/MunroList.vue';
-import BaggedMunro from './components/FavouriteMunro.vue'
+import BaggedMunro from './components/FavouriteMunro.vue';
 import MunroLineChart from './components/MunroLineChart.vue';
+import MunroMapping from './components/MunroMapping.vue';
 
 import { eventBus } from './main.js'
 
@@ -41,7 +43,8 @@ export default {
     'munro-detail': MunroDetail,
     'bagged-munro': BaggedMunro,
     'filter-munro-form': FilterMunroForm,
-    'munro-line-graph': MunroLineChart
+    'munro-line-graph': MunroLineChart,
+    'munro-map': MunroMapping
   },
   mounted() {
     this.getNewListItems();

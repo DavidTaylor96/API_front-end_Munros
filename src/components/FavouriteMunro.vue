@@ -17,7 +17,7 @@ export default {
 
   methods: {
    removeMunro: function(index){
-     return this.baggedMunro.splice(index, 0)
+     return this.baggedMunro.splice(index, 1)
    }
   }
 }
