@@ -12,7 +12,7 @@
     <button v-if="!baggedMunro.includes(selectedMunro)" v-on:click="addToFavourite">Bag Munro</button>
     <bagged-munro :baggedMunro="baggedMunro"></bagged-munro>
 
-    <munro-line-graph></munro-line-graph>
+    <munro-line-graph v-if="mixData" :mixData="mixData"></munro-line-graph>
 
   </div>
 </template>
@@ -33,6 +33,7 @@ export default {
       munros: [],
       selectedMunro: null,
       baggedMunro: [],
+      mixData: null,
     }
   },
   components:{
@@ -58,6 +59,12 @@ export default {
     addToFavourite: function () {
       if(!this.selectedMunro) return;
       this.baggedMunro.push(this.selectedMunro)
+    },
+    fetchMixData: function(data){
+      const url = `https://munroapi.herokuapp.com/munros/${data.name}/${data.height}`;
+      fetch(url)
+      .then(res => res.json())
+      .then(result => this.mixData = results)
     }
   }
 }
