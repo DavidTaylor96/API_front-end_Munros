@@ -54,6 +54,9 @@ export default {
     eventBus.$on('munro-selected', (munro) => {
       this.selectedMunro = munro
     })
+    // eventBus.$on('fav'   removeMunro: function(index){
+  //    return this.baggedMunro.splice(index, 1)
+  //  }
   },
   methods: {
     getNewListItems() {
@@ -61,7 +64,7 @@ export default {
         .then(res => res.json())
         .then(data => {
           this.munros = data
-          this.mixData = data
+          this.mixData = data.slice(0, 20)
       })
     },
     addToFavourite: function () {
