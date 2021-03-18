@@ -1,4 +1,4 @@
-# new_api
+# Api
 
 ## Project setup
 ```
@@ -10,20 +10,8 @@ npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Run your end-to-end tests
-```
-npm run test:e2e
-```
-
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Project
+![Screenshot 2021-03-18 at 14 39 05](https://user-images.githubusercontent.com/73443858/111644703-fe6a8e00-87f7-11eb-9e06-611965e2437a.png)
